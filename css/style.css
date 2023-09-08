@@ -1,0 +1,128 @@
+body {
+    background-color: rgb(230, 230, 230);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cuerpo-calculadora {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 80px);
+}
+
+.botones {
+    text-align: center;
+    font-size: 20px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(240, 240, 240);
+    cursor: default;
+    border: none;
+}
+
+.calculadora {
+    margin-top: 0;
+    position: relative;
+    left: 800px;
+    max-width: 420px;
+}
+
+.botones:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+.botones:active {
+    background-color: rgb(192, 192, 192);
+}
+
+.botones:focus {
+    outline: none;
+}
+
+.numeros {
+    background-color: white;
+    font-weight: 500;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.resultado,
+.cadenaOperacion {
+    text-align: center;
+}
+
+.seleccionBase {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.resultado>h1 {
+    font-size: 50px;
+}
+
+.cadenaOperacion>p {
+    font-size: 15px;
+    margin-bottom: -4px;
+}
+
+.bloqueTabla {
+    position: relative;
+    left: 100px;
+    bottom: 630px;
+    max-width: 150px;
+}
+
+.table {
+    width: 20%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table td,
+.table th {
+    padding: 10px 10px;
+    border-bottom: 2px solid #171717;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: #404141;
+    color: #ffffff;
+}
+
+.table tr:nth-child(even) {
+    background-color: rgb(240, 240, 240);
+}
+
+.div_comboBox_Base {
+    position: relative;
+    left: 370px;
+    top: 100px;
+    width: 365px;
+}
+
+.comboBox_Base {
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    width: 70px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 140px;
+}
+
+.comboBox_Base:focus {
+    outline: none;
+}
