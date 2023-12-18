@@ -1,6 +1,6 @@
 var acumulado = false,
     memoria = Array(),
-    valor, valor2, base = 2 /*,numero*/ ;
+    valor, operacion, base = 2 /*,numero*/ ;
 
 activarTeclas($('#selectBase').val());
 
@@ -96,8 +96,9 @@ function limpiar() {
     $('#valor').html('0');
     $('#operacion').html('');
     valor = 0;
-    acumulado = false
-    mostrarTabla('NaN');
+    acumulado = false;
+    $('.bloqueTabla').css("display","none");
+    //mostrarTabla('NaN');
     memoria = [];
 
 }
@@ -141,7 +142,7 @@ $(document).on('click', '#igual', function() {
     else
         valor = $('#operacion').text() + $('#valor').text();
 
-    valor2 = $('#valor').text();
+    operacion = $('#valor').text();
 
     if (memoria[memoria.length - 1] == "x" ||
         memoria[memoria.length - 1] == "÷" ||
@@ -155,21 +156,25 @@ $(document).on('click', '#igual', function() {
 
     //cambiar los signos x y ÷
     memoria = corregir_Signos(memoria);
-
     valor = convertirNumeros(memoria, base);
-   
+    
     try {
+        
         valor = eval(valor);
-
-        mostrarTabla(valor);
+      
+        let valor_en_tabla_salida = eval(valor.toString(10));
+        
+        $('.bloqueTabla').css("display","block");
+        mostrarTabla(valor_en_tabla_salida);
         valor = valor.toString(base);
+        
         $('#valor').html(valor);
         if (memoria.length == 0)
             $('#operacion').html($('#operacion').text());
         else if (memoria[memoria.length - 1] == ")")
             $('#operacion').html($('#operacion').text());
         else
-            $('#operacion').html($('#operacion').text() + valor2);
+            $('#operacion').html($('#operacion').text() + operacion);
 
         memoria = memoria.splice(memoria.length, 1, valor);
 
